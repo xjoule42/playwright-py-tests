@@ -9,7 +9,7 @@ load_dotenv()
 @pytest.fixture(scope="session")
 def browser_context():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context()
         yield context
         #context.storage_state(path="auth/login.json")
